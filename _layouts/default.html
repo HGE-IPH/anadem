@@ -84,6 +84,9 @@
           
           // Asset
           var anadem = ee.Image('projects/et-brasil/assets/anadem/v1');
+
+         // Remover noData
+          var anadem = anadem.updateMask(anadem.neq(-9999));
           
           // Visualization parameters
           var visparams = { min: 0,
