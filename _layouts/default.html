@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+     <!-- other content of the head element goes here -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/styles/default.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
 {% seo %}
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
     <!--[if lt IE 9]>
@@ -68,10 +73,7 @@
         </div>
         <p></p>
 
-        <div class="language-plaintext highlighter-rouge">
-          <div class='highlight'>
-
-            <code tabindex="0"><span class="kd">  
+       <pre><code class="language-html">
           /*
           //Example 1 ANADEM visualization//
           Developed by the Federal University of Rio Grande do Sul and Brazilian Water Agency (ANA)
@@ -88,9 +90,9 @@
           };
           // add layer 
           Map.addLayer(anadem,visparams,'anadem');</span>
+          </code></pre>
 
-          </div> 
-                  </div>
+          
         
         <h3>Source code</h3>
         <a href="https://github.com/HGE-IPH/anadem/tree/main">Anadem v 1.0</a>
