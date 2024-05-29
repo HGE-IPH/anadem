@@ -353,7 +353,7 @@ def calc_forest_offset(image, bands, classifier_name, numberoftrees, samples, ma
     return ee.List([classification.rename('classification'), trained])
 
   
-def fvc_func(geometry):
+def fvc_func(start_date, end_date,geometry):
 
     col_sentinel2 = 'COPERNICUS/S2_HARMONIZED'
 
@@ -379,7 +379,7 @@ def fvc_func(geometry):
         return fvc.clamp(0,1).rename("fvc")
 
 
-    s2_col = ee.ImageCollection(col_sentinel2).filterDate('2020-01-01','2022-12-31')\
+    s2_col = ee.ImageCollection(col_sentinel2).filterDate(start_date,end_date)\
     .filterBounds(geometry)\
     .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE',5))\
     .select(['B.*','QA60'])\
